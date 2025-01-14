@@ -114,7 +114,7 @@ const char *getTypeName(PokemonType type);
  * @return newly allocated PokemonNode*
  * Why we made it: We need a standard way to allocate BST nodes.
  */
-PokemonNode *createPokemonNode(const PokemonData *data);
+PokemonNode *createPokemonNode(const char* name);
 
 /**
  * @brief Create an OwnerNode for the circular owners list.
@@ -167,6 +167,13 @@ PokemonNode *insertPokemonNode(PokemonNode *root, PokemonNode *newNode);
  * Why we made it: BFS ensures we find nodes even in an unbalanced tree.
  */
 PokemonNode *searchPokemonBFS(PokemonNode *root, int id);
+/**
+ * @brief regular search for a Pokemon by ID .
+ * @param root BST root
+ * @param id ID to find
+ * @return pointer to found node or NULL.
+ */
+PokemonNode *searchPokemon(PokemonNode *root, int id);
 
 /**
  * @brief Remove node from BST by ID if found (BST removal logic).
@@ -184,7 +191,7 @@ PokemonNode *removeNodeBST(PokemonNode *root, int id);
  * @return updated BST root
  * Why we made it: BFS confirms existence, then removeNodeBST does the removal.
  */
-PokemonNode *removePokemonByID(PokemonNode *root, int id);
+int removePokemonByID(PokemonNode **root, int id);
 
 /* ------------------------------------------------------------
    4) Generic BST Traversals (Function Pointers)
@@ -436,7 +443,7 @@ void mergePokedexMenu(void);
  * @brief Print owners left or right from head, repeating as many times as user wants.
  * Why we made it: Demonstrates stepping through a circular list in a chosen direction.
  */
-void printOwnersCircular(void);
+void printOwnersCircular();
 
 /* ------------------------------------------------------------
    12) Cleanup All Owners at Program End
