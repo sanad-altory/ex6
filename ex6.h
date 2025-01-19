@@ -444,6 +444,7 @@ void mergePokedexMenu(void);
  * Why we made it: Demonstrates stepping through a circular list in a chosen direction.
  */
 void printOwnersCircular();
+void printOwners();
 
 /* ------------------------------------------------------------
    12) Cleanup All Owners at Program End
