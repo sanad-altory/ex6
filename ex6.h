@@ -191,7 +191,8 @@ PokemonNode *removeNodeBST(PokemonNode *root, int id);
  * @return updated BST root
  * Why we made it: BFS confirms existence, then removeNodeBST does the removal.
  */
-int removePokemonByID(PokemonNode **root, int id);
+PokemonNode *removePokemonByID(PokemonNode *root, int id);
+void releasePokemon(OwnerNode *owner);
 
 /* ------------------------------------------------------------
    4) Generic BST Traversals (Function Pointers)
